@@ -1,3 +1,13 @@
+// === โค้ดสร้างเว็บจำลองสำหรับหลอกระบบ Render ไม่ให้เกิด Timed Out ===
+const http = require('http');
+const port = process.env.PORT || 3000;
+http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Yamngao Bot is running!\n');
+}).listen(port, () => {
+    console.log(`ระบบจำลองหน้าเว็บเปิดใช้งานที่พอร์ต: ${port}`);
+});
+// ==========================================================
 const { Client, GatewayIntentBits } = require('discord.js');
 const { joinVoiceChannel, VoiceConnectionStatus } = require('@discordjs/voice');
 
